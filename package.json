@@ -1,0 +1,7 @@
+{
+    "name": "ttracker",
+    "version": "0.0.1",
+    "scripts": {
+        "app": "cd App && pnpm dev"
+    }
+}
