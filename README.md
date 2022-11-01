@@ -27,3 +27,14 @@ pnpm i
 ```bash
 pnpm app
 ```
+
+---
+
+# tTracker - preview
+
+![signin email@1x](https://user-images.githubusercontent.com/17111965/199175284-e43747e1-2106-41dc-a306-be255c549341.png)
+![signin phone@1x](https://user-images.githubusercontent.com/17111965/199175307-383f9008-fbea-416a-83e3-dce4fa66ee98.png)
+![signup@1x](https://user-images.githubusercontent.com/17111965/199175327-f81dd9c3-c533-418e-b381-8093dc331431.png)
+![emploers@1x](https://user-images.githubusercontent.com/17111965/199175367-90c54815-e52b-40ea-ba68-92541f40fa0c.png)
+![my tasks@1x](https://user-images.githubusercontent.com/17111965/199175390-5a6da0d8-905c-497b-9554-dc0baf46a95b.png)
+![work tasks@1x](https://user-images.githubusercontent.com/17111965/199175424-098676cd-26be-4da4-8906-209349a96858.png)
