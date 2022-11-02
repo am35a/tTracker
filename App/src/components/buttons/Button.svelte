@@ -26,12 +26,13 @@
         font-weight: 600
         line-height: 1
         text-decoration: none
-        cursor: pointer
         user-select: none
-        &:not(.active)
+        &:not(:disabled)
             color: rgba(0, 0, 0, .25)
             background-color: rgba(0, 0, 0, .05)
-        &.active
+            cursor: pointer
+        &:disabled
             color: rgba(14, 110, 256, 1)
             background-color: rgba(14, 110, 256, .25)
+            cursor: not-allowed
 </style>
