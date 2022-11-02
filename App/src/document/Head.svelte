@@ -13,13 +13,37 @@
 <style lang="sass" global>
     :root
         --main-background-color: rgba(248, 249, 250, 1)
-        --main-color: rgba(0, 0, 0, .75)
+        --main-color-75: rgba(0, 0, 0, .75)
+        --mute-color-25: rgba(0, 0, 0, .25)
         --face-background-color: rgba(255, 255, 255, 1)
 
+        --header-color: var(--mute-color-25)
+        --header-title-color: var(--main-color-75)
+
         --box-shadow-color: rgba(0,0,0,0.15)
-        --box-shadow-lg: 0px 2px 8px var(--box-shadow-color)
-        --box-shadow-md: 0px 2px 6px var(--box-shadow-color)
+        --box-shadow-lg: 0px 4px 8px var(--box-shadow-color)
+        --box-shadow-md: 0px 3px 6px var(--box-shadow-color)
         --box-shadow-sm: 0px 2px 4px var(--box-shadow-color)
+
+        --border-radius-lg: 32px
+        --border-radius-md: 24px
+        --border-radius-sm: 16px
+        --border-radius-xs: 8px
+
+        --padding-lg: 32px
+        --padding-md: 24px
+        --padding-sm: 16px
+        --padding-xs: 8px
+ 
+        --margin-lg: 32px
+        --margin-md: 24px
+        --margin-sm: 16px
+        --margin-xs: 8px
+
+        --gap-lg: 32px
+        --gap-md: 24px
+        --gap-sm: 16px
+        --gap-xs: 8px
 
         --border-radius-lg: 16px
         --border-radius-md: 12px
@@ -45,7 +69,4 @@
         background-color: var(--main-background-color)
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif
         color: var(--main-color)
-        body
-            position: relative
-            height: 100%
 </style>
