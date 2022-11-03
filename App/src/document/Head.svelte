@@ -13,14 +13,23 @@
 <style lang="sass" global>
     :root
         --main-background-color: rgba(248, 249, 250, 1)
-        --main-color-75: rgba(0, 0, 0, .75)
-        --mute-color-25: rgba(0, 0, 0, .25)
+        --main-color-75: rgba(0, 2, 4, .75)
+        --mute-color-25: rgba(0, 2, 4, .25)
         --face-background-color: rgba(255, 255, 255, 1)
 
         --header-color: var(--mute-color-25)
         --header-title-color: var(--main-color-75)
 
-        --box-shadow-color: rgba(0,0,0,0.15)
+        --background-color-form: rgba(0, 2, 4, .05) 
+        --color-form: rgba(0, 2, 4, .25)
+        --outline-color-form: rgba(0, 2, 4, .25)
+
+        --background-color-button: rgba(0, 2, 4, .05) 
+        --background-color-button-disabled: rgba(14, 110, 256, .25) 
+        --color-button: rgba(0, 2, 4, .25)
+        --color-button-disabled: rgba(14, 110, 256, 1)
+
+        --box-shadow-color: rgba(0, 2, 4, .15)
         --box-shadow-lg: 0px 4px 8px var(--box-shadow-color)
         --box-shadow-md: 0px 3px 6px var(--box-shadow-color)
         --box-shadow-sm: 0px 2px 4px var(--box-shadow-color)
@@ -29,6 +38,8 @@
         --border-radius-md: 24px
         --border-radius-sm: 16px
         --border-radius-xs: 8px
+
+        --border-radius-button: 4px
 
         --padding-lg: 32px
         --padding-md: 24px

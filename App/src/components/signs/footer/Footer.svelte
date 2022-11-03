@@ -1,5 +1,8 @@
 <footer>
-    <slot name="footer"></slot>
+    <slot name="footerLeft"></slot>
+    <div>
+        <slot name="footerRight"></slot>
+    </div>
 </footer>
 
 <style lang="sass">
@@ -8,4 +11,7 @@
         justify-content: space-between
         padding-left: var(--padding-sm)
         padding-right: var(--padding-sm)
+        > div
+            display: flex
+            gap: var(--gap-sm)
 </style>

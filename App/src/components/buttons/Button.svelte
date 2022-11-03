@@ -21,18 +21,18 @@
         margin: unset
         padding: 0 var(--padding-xs)
         border: none
-        border-radius: 4px
+        border-radius: var(--border-radius-button)
         font-size: 14px
         font-weight: 600
         line-height: 1
         text-decoration: none
         user-select: none
         &:not(:disabled)
-            color: rgba(0, 0, 0, .25)
-            background-color: rgba(0, 0, 0, .05)
+            color: var(--color-button)
+            background-color: var(--background-color-button)
             cursor: pointer
         &:disabled
-            color: rgba(14, 110, 256, 1)
-            background-color: rgba(14, 110, 256, .25)
+            color: var(--color-button-disabled)
+            background-color: var(--background-color-button-disabled)
             cursor: not-allowed
 </style>
