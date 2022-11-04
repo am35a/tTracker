@@ -8,9 +8,11 @@
 
 <style lang="sass" global>
     body
+        display: grid
+        grid-column: 1fr
+        grid-row: 1fr
         position: relative
         height: 100%
         &:not(.inside)
-            display: grid
             overflow: hidden
 </style>
