@@ -15,11 +15,13 @@
 <Body/>
 
 {#if !$user.isAuthorized}
-    {#if $user.signType === 'email'}
+    <SignInEmail />
+    <!-- {#if $user.signType === 'email'}
         <SignInEmail />
     {:else}
         <SignInPhone />
-    {/if}
+    {/if} -->
 {:else}
-    <SignUp />
+    isAuthorized = true
+    <!-- <SignUp /> -->
 {/if}
