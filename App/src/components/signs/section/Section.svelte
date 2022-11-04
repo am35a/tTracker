@@ -12,7 +12,7 @@
         gap: var(--gap-md)
         grid-row: 2/3
         grid-column: 1/2
-        min-width: 256px
+        width: 256px
         padding: var(--padding-md) var(--padding-lg) var(--padding-md) var(--padding-lg)
         background-color: var(--face-background-color)
         border-radius: var(--border-radius-md)

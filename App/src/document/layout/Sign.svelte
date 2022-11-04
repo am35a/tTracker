@@ -6,9 +6,11 @@
 
     import Button from '../../components/buttons/Button.svelte'
     import Input from '../../components/forms/Input.svelte'
+    import InputPhone from '../../components/forms/InputPhone.svelte'
 
     import { user } from '../../store/store'
 
+    let valuePhone: string = ''
     let valueEmail: string = ''
     let valuePassword: string = ''
 </script>
@@ -37,7 +39,7 @@
         </Header>
         <Section>
             <svelte:fragment slot="body">
-                <Input value={valueEmail} type={'email'} />
+                <InputPhone value={valuePhone} />
                 <Input value={valuePassword} type={'password'} />
                 <Button>SIGN IN</Button>
             </svelte:fragment>
@@ -52,7 +54,7 @@
         <Section>
             <svelte:fragment slot="body">
                 <Input value={valueEmail} type={'email'} />
-                <Input value={valuePassword} type={'password'} />
+                <InputPhone value={valuePhone} />
                 <Button>SIGN IN</Button>
             </svelte:fragment>
         </Section>

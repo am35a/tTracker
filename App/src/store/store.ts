@@ -10,7 +10,7 @@ export const appData = writable(
 export let user: any = writable(
     {
         isAuthorized: false as boolean, // false as default
-        signType: 'email' as string,
+        signType: 'phone' as string,
         email: {
             email: 's4@mobitoon.ru' as string,
             password: '123456' as string
