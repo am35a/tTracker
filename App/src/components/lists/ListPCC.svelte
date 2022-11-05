@@ -1,22 +1,54 @@
 <script lang="ts">
-    import { user } from '../../store/store'
     import { fly } from 'svelte/transition'
+    
+    import { user } from '../../store/store'
 
     import Input from "../forms/Input.svelte"
     import Button from "../buttons/Button.svelte"
+
+    let countriesListArrObj = [] as any
+
+    async function getData(path:string): Promise<any> {
+        let res = await fetch(path)
+        return res.ok ? {
+            data: await res.json(),
+            status: true
+        } : {
+            data : `Error: ${res.status}`,
+            status: false
+        }
+    }
+
+    let promise = getData('/countries/list.json')
+    // console.log(promise)
+
+    promise.then((value) => {
+        countriesListArrObj = value.data
+        console.log(countriesListArrObj)
+    })
     
-    export let countryCode = '' as string    
+    // $user.phone.countryCode
+
+    let countryName = '' as string
+
+    $: {
+        console.log('countryName: ', countryName)
+    }
 </script>
 
 {#if $user.modalWindow === 'searchPCC'}
     <section transition:fly="{{ y: 200, duration: 500 }}">
         <div class="list">
-            <div class="item">
-                <img src="/countries/flags/us.svg" alt="">
-                <span>United States of America</span>
-            </div>
+            {#each countriesListArrObj as countryObj }
+                {#if countryObj.name.indexOf(countryName) !== -1} 
+                    <div class="item">
+                        <img src="/countries/flags/{countryObj.code}.svg" alt="">
+                        <span>{countryObj.name}</span>
+                    </div>
+                {/if}
+            {/each}
         </div>
-        <Input value={countryCode} type={'search'} />
+        <Input bind:value={countryName} type={'search'} />
         <Button on:click={() => $user.modalWindow = ''}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
@@ -50,14 +82,19 @@
             .item
                 display: flex
                 gap: var(--gap-sm)
+                max-width: 100%
                 height: 36px
                 padding: 0 var(--padding-xs)
                 align-items: center
                 color: var(--color-form)
+                overflow: auto
                 &:not(:first-child)
                     border-top: 1px solid var(--border-color-form)
                 span
                     flex-grow: 1
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    white-space: nowrap
                 img
                     height: 16px
 </style>

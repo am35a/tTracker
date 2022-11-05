@@ -16,8 +16,10 @@ export let user: any = writable(
             password: '123456' as string
         } as any,
         phone: {
-            code: '12345' as string
+            countryCode: '7' as string,
+            phoneNumber: '9629651050' as string,
+            verifyCode: '12345' as string
         } as any,
-        modalWindow: '' as string 
+        modalWindow: 'searchPCC' as string 
     }
 )

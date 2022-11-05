@@ -72,13 +72,6 @@
         "name": "Anguilla"
     },
     {
-        "code": "aq",
-        "flag_1x1": "flags/1x1/aq.svg",
-        "flag_4x3": "flags/4x3/aq.svg",
-        "iso": true,
-        "name": "Antarctica"
-    },
-    {
         "capital": "St. John's",
         "code": "ag",
         "continent": "North America",
@@ -723,13 +716,6 @@
         "flag_4x3": "flags/4x3/ga.svg",
         "iso": true,
         "name": "Gabon"
-    },
-    {
-        "code": "es-ga",
-        "flag_1x1": "flags/1x1/es-ga.svg",
-        "flag_4x3": "flags/4x3/es-ga.svg",
-        "iso": false,
-        "name": "Galicia"
     },
     {
         "capital": "Banjul",
@@ -2114,13 +2100,6 @@
         "flag_4x3": "flags/4x3/gb.svg",
         "iso": true,
         "name": "United Kingdom"
-    },
-    {
-        "code": "un",
-        "flag_1x1": "flags/1x1/un.svg",
-        "flag_4x3": "flags/4x3/un.svg",
-        "iso": false,
-        "name": "United Nations"
     },
     {
         "capital": "Washington, D.C.",
