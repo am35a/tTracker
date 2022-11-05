@@ -23,6 +23,7 @@
         --background-color-form: rgba(0, 2, 4, .05) 
         --color-form: rgba(0, 2, 4, .25)
         --outline-color-form: rgba(0, 2, 4, .25)
+        --border-color-form: rgba(0, 2, 4, .25)
 
         --background-color-button: rgba(0, 2, 4, .05) 
         --background-color-button-disabled: rgba(14, 110, 256, .25) 
@@ -68,6 +69,7 @@
         margin: 0
         box-sizing: inherit
         background-repeat: no-repeat
+        user-select: none
 
     ::before,
     ::after

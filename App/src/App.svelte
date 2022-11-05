@@ -3,6 +3,7 @@
     import Body from './document/Body.svelte'
     import Sign from './document/layout/Sign.svelte'
     import LogoHalf from './components/logo/LogoHalf.svelte'
+    import ListPCC from './components/lists/ListPCC.svelte'
 
     import {
         appData,
@@ -16,6 +17,7 @@
 {#if !$user.isAuthorized}
     <Sign />
     <LogoHalf />
+    <ListPCC />
 {:else}
     isAuthorized = true
 {/if}

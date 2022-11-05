@@ -17,6 +17,7 @@ export let user: any = writable(
         } as any,
         phone: {
             code: '12345' as string
-        } as any
+        } as any,
+        modalWindow: '' as string 
     }
 )
