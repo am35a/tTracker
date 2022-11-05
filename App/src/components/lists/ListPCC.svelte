@@ -24,15 +24,20 @@
 
     promise.then((value) => {
         countriesListArrObj = value.data
-        console.log(countriesListArrObj)
+        // console.log(countriesListArrObj)
     })
     
     // $user.phone.countryCode
 
     let countryName = '' as string
 
-    $: {
-        console.log('countryName: ', countryName)
+    // $: {
+    //     console.log('countryName: ', countryName)
+    // }
+
+    function selectCountry (value: string) {
+        $user.phone.country = value
+        $user.modalWindow = ''
     }
 </script>
 
@@ -40,8 +45,9 @@
     <section transition:fly="{{ y: 200, duration: 500 }}">
         <div class="list">
             {#each countriesListArrObj as countryObj }
-                {#if countryObj.name.indexOf(countryName) !== -1} 
-                    <div class="item">
+                {#if countryObj.name.indexOf(countryName) !== -1}
+                    <!-- svelte-ignore a11y-click-events-have-key-events -->
+                    <div class="item" on:click={() => selectCountry(countryObj.code)}>
                         <img src="/countries/flags/{countryObj.code}.svg" alt="">
                         <span>{countryObj.name}</span>
                     </div>
