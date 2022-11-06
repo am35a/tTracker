@@ -15,18 +15,19 @@
 <style lang="sass">
     div
         display: inline-flex
+        gap: var(--gap-xs)
         align-items: center
-        width: 32px
         height: 32px
         border-radius: 4px
         outline: 1px solid var(--outline-color-form)
         outline-offset: -1px
         color: var(--color-form)
-        padding: 0 0 0 var(--padding-xs)
+        padding: 0 var(--padding-xs)
         cursor: pointer
         img
             height: 16px
         svg
             margin-left: auto
+            width: 8px
 
 </style>

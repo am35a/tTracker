@@ -44,15 +44,21 @@
 {#if $user.modalWindow === 'searchPCC'}
     <section transition:fly="{{ y: 200, duration: 500 }}">
         <div class="list">
-            {#each countriesListArrObj as countryObj }
-                {#if countryObj.name.indexOf(countryName) !== -1}
-                    <!-- svelte-ignore a11y-click-events-have-key-events -->
-                    <div class="item" on:click={() => selectCountry(countryObj.code)}>
-                        <img src="/countries/flags/{countryObj.code}.svg" alt="">
-                        <span>{countryObj.name}</span>
-                    </div>
-                {/if}
-            {/each}
+            {#await promise}
+                Loading ...
+            {:then data}
+                {#each countriesListArrObj as countryObj }
+                    {#if countryObj.name.indexOf(countryName) !== -1}
+                        <!-- svelte-ignore a11y-click-events-have-key-events -->
+                        <div class="item" on:click={() => selectCountry(countryObj.code)}>
+                            <img src="/countries/flags/{countryObj.code}.svg" alt="{countryObj.name}">
+                            <span>{countryObj.name}</span>
+                        </div>
+                    {/if}
+                {/each}
+            {:catch error}
+                Loading error!
+            {/await}
         </div>
         <Input bind:value={countryName} type={'search'} />
         <Button on:click={() => $user.modalWindow = ''}>
