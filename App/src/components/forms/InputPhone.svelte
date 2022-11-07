@@ -2,15 +2,13 @@
     import Input from "./Input.svelte"
     import SelectPCC from "./SelectPCC.svelte"
 
-    export let value = {
-        code: undefined as number,
-        phoneNumber: '' as string
-    } as any
+    export let code = '' as string
+    export let number = '' as string
 </script>
 
 <div>
-    <SelectPCC />
-    <Input value={value.phoneNumber} type={'phone'} />
+    <SelectPCC value={code} />
+    <Input value={number} type={'tel'}/>
 </div>
 
 <style lang="sass">

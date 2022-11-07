@@ -10,7 +10,10 @@
 
     import { user } from '../../store/store'
 
-    let valuePhone: string = ''
+    let valuePhone = {
+        code: $user.phone.code as string,
+        number: $user.phone.number as string
+    } as any
     let valueEmail: string = ''
     let valuePassword: string = ''
 </script>
@@ -39,7 +42,7 @@
         </Header>
         <Section>
             <svelte:fragment slot="body">
-                <InputPhone value={valuePhone} />
+                <InputPhone {...valuePhone} />
                 <Input value={valuePassword} type={'password'} />
                 <Button>SIGN IN</Button>
             </svelte:fragment>
@@ -54,7 +57,7 @@
         <Section>
             <svelte:fragment slot="body">
                 <Input value={valueEmail} type={'email'} />
-                <InputPhone value={valuePhone} />
+                <InputPhone {...valuePhone} />
                 <Button>SIGN IN</Button>
             </svelte:fragment>
         </Section>

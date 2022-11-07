@@ -12,7 +12,7 @@ export let user: any = writable(
         isAuthorized: false as boolean, // false as default
         signType: 'phone' as string,
         email: {
-            email: 's4@mobitoon.ru' as string,
+            email: 'goto@ttracker.dev' as string,
             password: '123456' as string
         } as any,
         phone: {

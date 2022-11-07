@@ -1,5 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-mk" viewBox="0 0 640 480">
-  <path fill="#d20000" d="M0 0h640v480H0z"/>
-  <path fill="#ffe600" d="M0 0h96l224 231.4L544 0h96L0 480h96l224-231.4L544 480h96zm640 192v96L0 192v96zM280 0l40 205.7L360 0zm0 480 40-205.7L360 480z"/>
-  <circle cx="320" cy="240" r="77.1" fill="#ffe600" stroke="#d20000" stroke-width="17.1"/>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
+<rect y="85.333" fill="#FFDA44" width="512" height="341.337"/>
+<g>
+	<polygon fill="#D80027" points="383.875,426.662 256,252.286 282.827,426.662  "/>
+	<polygon fill="#D80027" points="133.565,85.33 256,252.286 230.314,85.33  "/>
+	<polygon fill="#D80027" points="229.171,426.662 256,252.286 128.124,426.662  "/>
+	<polygon fill="#D80027" points="0,85.33 0,212.9 256,252.286 28.333,85.33  "/>
+	<polygon fill="#D80027" points="0,426.662 18.212,426.662 256,252.286 0,291.67  "/>
+	<polygon fill="#D80027" points="256,252.286 512,212.9 512,85.33 483.669,85.33  "/>
+	<polygon fill="#D80027" points="281.686,85.33 256,252.286 378.434,85.33  "/>
+	<polygon fill="#D80027" points="512,426.662 512,291.671 256,252.286 493.787,426.662  "/>
+	<circle fill="#D80027" cx="256" cy="252.29" r="59.359"/>
+</g>
+<circle fill="#FFDA44" cx="256" cy="252.29" r="44.522"/>
 </svg>

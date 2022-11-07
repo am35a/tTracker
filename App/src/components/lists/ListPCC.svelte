@@ -85,6 +85,7 @@
             display: grid
             align-items: end
             overflow: auto
+            cursor: pointer
             .item
                 display: flex
                 gap: var(--gap-sm)
