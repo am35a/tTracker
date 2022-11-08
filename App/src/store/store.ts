@@ -10,9 +10,9 @@ export const appData = writable(
 export let user: any = writable(
     {
         isAuthorized: false as boolean, // false as default
-        signType: 'phone' as string,
+        signType: 'email' as string,
         email: {
-            email: 'goto@ttracker.dev' as string,
+            address: 'goto@ttracker.dev' as string,
             password: '123456' as string
         } as any,
         phone: {
@@ -21,6 +21,11 @@ export let user: any = writable(
             number: '9629651050' as string,
             password: '12345' as string
         } as any,
-        modalWindow: '' as string // searchPCC 
+        modalWindow: '' as string, // searchPCC
+        modal: {
+            type: '',
+            title: '',
+            text: ''
+        }
     }
 )

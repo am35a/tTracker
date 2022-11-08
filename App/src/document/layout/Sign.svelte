@@ -7,6 +7,7 @@
     import Button from '../../components/buttons/Button.svelte'
     import Input from '../../components/forms/Input.svelte'
     import InputPhone from '../../components/forms/InputPhone.svelte'
+    import InputCode from '../../components/forms/InputCode.svelte'
 
     import { user } from '../../store/store'
 
@@ -14,8 +15,21 @@
         code: $user.phone.code as string,
         number: $user.phone.number as string
     } as any
-    let valueEmail: string = ''
+    let valueEmail: string = $user.email.address
+
     let valuePassword: string = ''
+
+    function signByEmail() {
+        if ( valueEmail === $user.email.address && valuePassword === $user.email.password )
+            $user.isAuthorized = true
+        else {
+            $user.modal.type = 'error'
+            $user.modal.title = 'Sign in error'
+            $user.modal.text = 'Wrong Email or password'
+            console.log(valueEmail)
+            console.log(valuePassword)
+        }
+    }
 </script>
 
 <Main>
@@ -28,9 +42,9 @@
         </Header>
         <Section>
             <svelte:fragment slot="body">
-                <Input value={valueEmail} type={'email'} />
-                <Input value={valuePassword} type={'password'} />
-                <Button>SIGN IN</Button>
+                <Input bind:value={valueEmail} type={'email'} />
+                <Input bind:value={valuePassword} type={'password'} />
+                <Button on:click={signByEmail}>SIGN IN</Button>
             </svelte:fragment>
         </Section>
     {:else if $user.signType === 'phone'}
@@ -43,7 +57,7 @@
         <Section>
             <svelte:fragment slot="body">
                 <InputPhone {...valuePhone} />
-                <Input value={valuePassword} type={'password'} />
+                <InputCode value={valuePassword} />
                 <Button>SIGN IN</Button>
             </svelte:fragment>
         </Section>
@@ -58,7 +72,7 @@
             <svelte:fragment slot="body">
                 <Input value={valueEmail} type={'email'} />
                 <InputPhone {...valuePhone} />
-                <Button>SIGN IN</Button>
+                <Button>SIGN UP</Button>
             </svelte:fragment>
         </Section>
     {/if}

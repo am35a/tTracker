@@ -16,6 +16,7 @@
         --main-color-75: rgba(0, 2, 4, .75)
         --mute-color-25: rgba(0, 2, 4, .25)
         --face-background-color: rgba(255, 255, 255, 1)
+        --error-color: rgba(200, 10, 10, 1)
 
         --header-color: var(--mute-color-25)
         --header-title-color: var(--main-color-75)

@@ -4,6 +4,7 @@
     import Sign from './document/layout/Sign.svelte'
     import LogoHalf from './components/logo/LogoHalf.svelte'
     import ListPCC from './components/lists/ListPCC.svelte'
+    import ModalAlert from './components/modals/Alert.svelte'
 
     import {
         appData,
@@ -18,6 +19,7 @@
     <Sign />
     <LogoHalf />
     <ListPCC />
+    <ModalAlert />
 {:else}
     isAuthorized = true
 {/if}
