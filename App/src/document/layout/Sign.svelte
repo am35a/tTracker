@@ -25,9 +25,16 @@
         else {
             $user.modal.type = 'error'
             $user.modal.title = 'Sign in error'
-            $user.modal.text = 'Wrong Email or password'
-            console.log(valueEmail)
-            console.log(valuePassword)
+            $user.modal.text = 'Wrong email or password'
+        }
+    }
+    function signByPhone () {
+        if ( valuePhone.number === $user.phone.number && valuePassword === $user.phone.password )
+            $user.isAuthorized = true
+        else {
+            $user.modal.type = 'error'
+            $user.modal.title = 'Sign in error'
+            $user.modal.text = 'Wrong phone or password'
         }
     }
 </script>
@@ -57,8 +64,8 @@
         <Section>
             <svelte:fragment slot="body">
                 <InputPhone {...valuePhone} />
-                <InputCode value={valuePassword} />
-                <Button>SIGN IN</Button>
+                <InputCode bind:value={valuePassword} />
+                <Button on:click={signByPhone}>SIGN IN</Button>
             </svelte:fragment>
         </Section>
     {:else if $user.signType === 'welcome'}
@@ -70,7 +77,7 @@
         </Header>
         <Section>
             <svelte:fragment slot="body">
-                <Input value={valueEmail} type={'email'} />
+                <Input bind:value={valueEmail} type={'email'} />
                 <InputPhone {...valuePhone} />
                 <Button>SIGN UP</Button>
             </svelte:fragment>
@@ -78,7 +85,7 @@
     {/if}
     <Footer>
         <svelte:fragment slot="footerLeft">
-            <Button on:click={() => $user.signType = 'welcome'} disabled = {$user.signType === 'welcome'}>
+            <Button on:click={() => $user.signType = 'welcome'} disabled> <!--disabled = {$user.signType === 'welcome'}-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                     <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>

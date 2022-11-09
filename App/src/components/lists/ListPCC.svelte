@@ -6,7 +6,7 @@
     import Input from "../forms/Input.svelte"
     import Button from "../buttons/Button.svelte"
 
-    let countriesListArrObj = [] as any
+    let countriesListArrObj: any = []
 
     async function getData(path:string): Promise<any> {
         let res = await fetch(path)

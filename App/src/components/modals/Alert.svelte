@@ -37,4 +37,8 @@
         border-radius: var(--border-radius-md)
         box-shadow: var(--box-shadow-lg)
         overflow: hidden
+        header
+            font-weight: 600
+        div
+            font-size: 14px
 </style>

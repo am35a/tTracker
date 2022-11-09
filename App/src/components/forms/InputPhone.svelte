@@ -4,11 +4,13 @@
 
     export let code = '' as string
     export let number = '' as string
+
+    console.log(code)
 </script>
 
 <div>
-    <SelectPCC value={code} />
-    <Input value={number} type={'tel'}/>
+    <SelectPCC />
+    <Input bind:value={number} type={'tel'}/>
 </div>
 
 <style lang="sass">
