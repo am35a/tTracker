@@ -2,7 +2,7 @@
     import { fly } from 'svelte/transition'
 </script>
 
-<main transition:fly="{{ x: -200, duration: 500 }}">
+<main transition:fly="{{ x: +200, duration: 500 }}">
     <slot></slot>
 </main>
 
@@ -11,6 +11,6 @@
         grid-column: 1/2
         grid-row: 1/2
         display: grid
-        gap: var(--gap-sm)
-        margin: auto
+        grid-template-rows: max-content 1fr max-content
+        overflow-y: hidden
 </style>
