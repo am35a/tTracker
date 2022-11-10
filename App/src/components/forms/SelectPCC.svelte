@@ -16,8 +16,8 @@
         display: inline-flex
         gap: var(--gap-xs)
         align-items: center
-        height: 32px
-        border-radius: 4px
+        height: var(--height-form)
+        border-radius: var(--border-radius-form)
         outline: 1px solid var(--outline-color-form)
         outline-offset: -1px
         color: var(--color-form)

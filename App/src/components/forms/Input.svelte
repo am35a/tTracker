@@ -41,8 +41,8 @@
         display: inline-grid
         align-items: center
         min-width: 16px
-        height: 32px
-        border-radius: 4px
+        height: var(--height-form)
+        border-radius: var(--border-radius-form)
         outline: 1px solid var(--outline-color-form)
         outline-offset: -1px
         color: var(--color-form)
@@ -62,13 +62,13 @@
             border: none
             background: transparent
             color: var(--color-form)
-            font-size: 14px
+            font-size: var(--font-size-sm)
             font-weight: 600
             line-height: 1
             outline: none
             &::placeholder
                 color: rgba(0, 0, 0, .25)
-                font-size: 12px
+                font-size: var(--font-size-xs)
             &:invalid
                 color: rgba(255, 0, 0, .75)
 

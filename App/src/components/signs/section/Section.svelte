@@ -8,11 +8,11 @@
 
 <style lang="sass">
     section
-        display: grid
-        gap: var(--gap-md)
         grid-row: 2/3
         grid-column: 1/2
-        width: 256px
+        display: grid
+        gap: var(--gap-md)
+        width: var(--section-width)
         padding: var(--padding-md) var(--padding-lg)
         background-color: var(--face-background-color)
         border-radius: var(--border-radius-md)
