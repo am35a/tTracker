@@ -17,12 +17,12 @@
         gap: var(--gap-xs)
         justify-content: center
         align-items: center
-        height: 32px
+        height: var(--height-form)
         margin: unset
         padding: 0 var(--padding-xs)
         border: none
-        border-radius: var(--border-radius-button)
-        font-size: 14px
+        border-radius: var(--border-radius-form)
+        font-size: var(--font-size-sm)
         font-weight: 600
         line-height: 1
         text-decoration: none

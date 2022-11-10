@@ -17,6 +17,6 @@
         font-size: 12px
         :global(span)
             color: var(--header-title-color)
-            font-size: 18px
+            font-size: var(--font-size-lg)
             font-weight: 700
 </style>

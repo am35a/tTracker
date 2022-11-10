@@ -31,6 +31,8 @@
         --color-button: rgba(0, 2, 4, .25)
         --color-button-disabled: rgba(14, 110, 256, 1)
 
+        --height-form: 32px
+
         --box-shadow-color: rgba(0, 2, 4, .15)
         --box-shadow-lg: 0px 4px 8px var(--box-shadow-color)
         --box-shadow-md: 0px 3px 6px var(--box-shadow-color)
@@ -40,8 +42,7 @@
         --border-radius-md: 24px
         --border-radius-sm: 16px
         --border-radius-xs: 8px
-
-        --border-radius-button: 4px
+        --border-radius-form: 4px
 
         --padding-lg: 32px
         --padding-md: 24px
@@ -62,6 +63,13 @@
         --border-radius-md: 12px
         --border-radius-sm: 8px
         --border-radius-xs: 4px
+
+        --font-size-lg: 18px
+        --font-size-md: 16px
+        --font-size-sm: 14px
+        --font-size-xs: 12px
+
+        --section-width: 256px
 
     *,
     ::before,

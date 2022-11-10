@@ -29,7 +29,7 @@
         display: grid
         grid-template-rows: min-content 1fr
         gap: var(--gap-sm)
-        width: 256px
+        width: var(--section-width)
         max-height: 80%
         margin: auto
         padding: var(--padding-sm)
@@ -40,5 +40,5 @@
         header
             font-weight: 600
         div
-            font-size: 14px
+            font-size: var(--font-size-sm)
 </style>

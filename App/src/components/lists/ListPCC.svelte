@@ -71,7 +71,7 @@
         grid-template-columns: 1fr min-content
         grid-template-rows: 1fr min-content
         gap: var(--gap-sm)
-        width: 256px
+        width: var(--section-width)
         height: 320px
         max-height: 80%
         margin: auto
