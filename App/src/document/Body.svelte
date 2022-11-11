@@ -1,7 +1,8 @@
 <script lang="ts">
     import { user } from '../store/store'
 
-    $: if($user.isAuthorized) document.body.classList.toggle('inside')
+    $: $user.isAuthorized ? document.body.classList.add('inside') : document.body.classList.remove('inside')
+
 </script>
 
 <svelte:body/>

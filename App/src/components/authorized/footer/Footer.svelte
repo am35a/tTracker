@@ -1,27 +1,79 @@
 <script lang="ts">
+    import { user } from '../../../store/store'
 
+    function isActive (pagenumber: number): string {
+        if ($user.page === pagenumber)
+            return 'active'
+    }
 </script>
 
 <footer>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <!-- <slot></slot> -->
-    <!-- <div class="menu">
-    </div> -->
+    <div>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <svg
+            on:click={() => $user.page = 1}
+            class={$user.page === 1 ? 'active' : ''}
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5z"/>
+        </svg>
+    </div>
+    <div>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <svg
+            on:click={() => $user.page = 2}
+            class={$user.page === 2 ? 'active' : ''}
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-1.146 6.854-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+        </svg>
+    </div>
+    <div>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <svg
+            on:click={() => $user.page = 3}
+            class={$user.page === 3 ? 'active' : ''}
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+        </svg>
+    </div>
+    <div>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <svg
+            on:click={() => $user.page = 4}
+            class={$user.page === 4 ? 'active' : ''}
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M4 0h8a2 2 0 0 1 2 2v7H2V2a2 2 0 0 1 2-2zM2 12h12v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2zM.5 10a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5z"/>
+        </svg>
+    </div>
+    <div>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <svg
+            on:click={() => $user.page = 5}
+            class={$user.page === 5 ? 'active' : ''}
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-2 11.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1z"/>
+        </svg>
+    </div>
 </footer>
 
 <style lang="sass">
     footer
         display: flex
-        // grid-column: 1/2
-        // grid-row: 1/2
-        // display: grid
-        // align-self: end
-        // gap: var(--gap-sm)
-        // .menu
-        //     display: flex
-
+        gap: var(--gap-xs)
+        padding: var(--padding-xs) var(--padding-sm)
+        justify-content: space-around
+        background-color: var(--face-background-color)
+        div
+            display: flex
+            align-items: center
+            width: 32px
+            height: 32px
+            svg
+                width: 32px
+                transition: all 250ms
+                &:not(.active)
+                    color: var(--footer-color)
+                    height: 24px
+                &.active
+                    color: var(--footer-active-color)
+                    height: 32px
 </style>

@@ -26,6 +26,7 @@ export let user: any = writable(
             type: '',
             title: '',
             text: ''
-        }
+        },
+        page: 1 as number // 1 is organizations and as default
     }
 )
