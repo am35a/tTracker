@@ -21,6 +21,9 @@
         --header-color: var(--mute-color-25)
         --header-title-color: var(--main-color-75)
 
+        --footer-color: var(--mute-color-25)
+        --footer-active-color: var(--main-color-75)
+
         --background-color-form: rgba(0, 2, 4, .05) 
         --color-form: rgba(0, 2, 4, .25)
         --outline-color-form: rgba(0, 2, 4, .25)
