@@ -18,6 +18,8 @@
         --face-background-color: rgba(255, 255, 255, 1)
         --error-color: rgba(200, 10, 10, 1)
 
+        --hr-color: rgba(0, 2, 4, .15)
+
         --header-color: var(--mute-color-25)
         --header-title-color: var(--main-color-75)
 
@@ -34,18 +36,13 @@
         --color-button: rgba(0, 2, 4, .25)
         --color-button-disabled: rgba(14, 110, 256, 1)
 
-        --height-form: 32px
+        --height-form-md: 32px
+        --height-form-sm: 24px
 
         --box-shadow-color: rgba(0, 2, 4, .15)
         --box-shadow-lg: 0px 4px 8px var(--box-shadow-color)
         --box-shadow-md: 0px 3px 6px var(--box-shadow-color)
         --box-shadow-sm: 0px 2px 4px var(--box-shadow-color)
-
-        --border-radius-lg: 32px
-        --border-radius-md: 24px
-        --border-radius-sm: 16px
-        --border-radius-xs: 8px
-        --border-radius-form: 4px
 
         --padding-lg: 32px
         --padding-md: 24px

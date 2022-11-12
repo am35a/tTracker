@@ -41,8 +41,8 @@
         display: inline-grid
         align-items: center
         min-width: 16px
-        height: var(--height-form)
-        border-radius: var(--border-radius-form)
+        // height: var(--height-form-md)
+        border-radius: var(--border-radius-xs)
         outline: 1px solid var(--outline-color-form)
         outline-offset: -1px
         color: var(--color-form)
@@ -56,7 +56,8 @@
         input
             margin: unset
             padding: 0 var(--padding-sm)
-            height: 100%
+            // height: 100%
+            height: var(--height-form-md)
             min-width: inherit
             text-align: center
             border: none
@@ -66,6 +67,8 @@
             font-weight: 600
             line-height: 1
             outline: none
+            &.sm
+                height: var(--height-form-sm)
             &::placeholder
                 color: rgba(0, 0, 0, .25)
                 font-size: var(--font-size-xs)
