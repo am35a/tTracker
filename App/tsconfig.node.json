@@ -2,16 +2,8 @@
     "compilerOptions": {
         "composite": true,
         "module": "ESNext",
-        "moduleResolution": "Node"
-        // "baseUrl": "./",
-        // "paths": {
-        //     "$cmp": ["./src/components"],
-        //     "$cmp/*": ["./src/components/*"]
-        //     // "src/*": ["src/*"]
-        // },
-        // "forceConsistentCasingInFileNames": false,
-        // "allowSyntheticDefaultImports": true
-
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true /* inport * as bla ... = inport bla ... */
     },
     "include": ["vite.config.ts"]
 }

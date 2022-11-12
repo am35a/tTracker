@@ -1,13 +1,13 @@
 <script lang="ts">
-    import Main from '../../components/signs/Main.svelte'
-    import Header from '../../components/signs/header/Header.svelte'
-    import Section from '../../components/signs/section/Section.svelte'
-    import Footer from '../../components/signs/footer/Footer.svelte'
+    import Main from '$cmp/signs/Main.svelte'
+    import Header from '$cmp/signs/header/Header.svelte'
+    import Section from '$cmp/signs/section/Section.svelte'
+    import Footer from '$cmp/signs/footer/Footer.svelte'
 
-    import Button from '../../components/buttons/Button.svelte'
-    import Input from '../../components/forms/Input.svelte'
-    import InputPhone from '../../components/forms/InputPhone.svelte'
-    import InputCode from '../../components/forms/InputCode.svelte'
+    import Button from '$cmp/buttons/Button.svelte'
+    import Input from '$cmp/forms/Input.svelte'
+    import InputPhone from '$cmp/forms/InputPhone.svelte'
+    import InputCode from '$cmp/forms/InputCode.svelte'
 
     import { user } from '../../store/store'
 
