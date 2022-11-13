@@ -9,7 +9,7 @@
 </script>
 
 <div>
-    <SelectPCC />
+    <SelectPCC/>
     <Input bind:value={number} type={'tel'}/>
 </div>
 

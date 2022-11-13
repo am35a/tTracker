@@ -27,6 +27,13 @@
         line-height: 1
         text-decoration: none
         user-select: none
+        &.sm
+            height: var(--height-form-sm)
+            font-size: var(--font-size-xs)
+        &.lg
+            min-width: 24px
+            height: var(--height-form-lg)
+            font-size: var(--font-size-md)
         &:not(:disabled)
             color: var(--color-button)
             background-color: var(--background-color-button)
