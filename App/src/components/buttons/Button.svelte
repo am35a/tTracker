@@ -35,8 +35,11 @@
             height: var(--height-form-lg)
             font-size: var(--font-size-md)
         &:not(:disabled)
+            &.transparent
+                background-color: transparent
+            &:not(.transparent)
+                background-color: var(--background-color-button)
             color: var(--color-button)
-            background-color: var(--background-color-button)
             cursor: pointer
         &:disabled
             color: var(--color-button-disabled)
