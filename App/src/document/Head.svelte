@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale={$appData.initialScale}">
     <title>{$appData.title}</title>
     <link rel="stylesheet" href="/css/normalize.css">
@@ -36,6 +36,7 @@
         --color-button: rgba(0, 2, 4, .25)
         --color-button-disabled: rgba(14, 110, 256, 1)
 
+        --height-form-lg: 48px
         --height-form-md: 32px
         --height-form-sm: 24px
 

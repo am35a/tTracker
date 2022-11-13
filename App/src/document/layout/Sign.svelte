@@ -49,8 +49,8 @@
         </Header>
         <Section>
             <svelte:fragment slot="body">
-                <Input bind:value={valueEmail} type={'email'} />
-                <Input bind:value={valuePassword} type={'password'} />
+                <Input bind:value={valueEmail} type={'email'}/>
+                <Input bind:value={valuePassword} type={'password'}/>
                 <Button on:click={signByEmail}>SIGN IN</Button>
             </svelte:fragment>
         </Section>
@@ -63,8 +63,8 @@
         </Header>
         <Section>
             <svelte:fragment slot="body">
-                <InputPhone {...valuePhone} />
-                <InputCode bind:value={valuePassword} />
+                <InputPhone {...valuePhone}/>
+                <InputCode bind:value={valuePassword}/>
                 <Button on:click={signByPhone}>SIGN IN</Button>
             </svelte:fragment>
         </Section>
@@ -77,8 +77,8 @@
         </Header>
         <Section>
             <svelte:fragment slot="body">
-                <Input bind:value={valueEmail} type={'email'} />
-                <InputPhone {...valuePhone} />
+                <Input bind:value={valueEmail} type={'email'}/>
+                <InputPhone {...valuePhone}/>
                 <Button>SIGN UP</Button>
             </svelte:fragment>
         </Section>

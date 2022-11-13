@@ -18,10 +18,10 @@
 <Body/>
 
 {#if !$user.isAuthorized}
-    <Sign />
-    <LogoHalf />
-    <ListPCC />
-    <ModalAlert />
+    <Sign/>
+    <LogoHalf/>
+    <ListPCC/>
+    <ModalAlert/>
 {:else}
-    <Emploers />
+    <Emploers/>
 {/if}

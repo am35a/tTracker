@@ -53,7 +53,7 @@
         border-top-left-radius: var(--border-radius-lg)
         border-top-right-radius: var(--border-radius-lg)
         background-color: var(--face-background-color)
-        box-shadow: var(--box-shadow-lg)
+        box-shadow: var(--box-shadow-md)
         div
             display: flex
             padding: var(--padding-xs) 0

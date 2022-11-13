@@ -15,11 +15,11 @@
 </script>
 
 <div>
-    <Input bind:value={firstNumb} type="text" maxlength={1} placeholder={'-'} style="padding:0;" />
-    <Input bind:value={secondNumb} type="text" maxlength={1} placeholder={'-'} style="padding:0;" />
-    <Input bind:value={thirdNumb} type="text" maxlength={1} placeholder={'-'} style="padding:0;" />
-    <Input bind:value={fourthNumb} type="text" maxlength={1} placeholder={'-'} style="padding:0;" />
-    <Input bind:value={fifthNumb} type="text" maxlength={1} placeholder={'-'} style="padding:0;" />
+    <Input bind:value={firstNumb} type="text" maxlength={1} placeholder={'-'} style="padding:0;"/>
+    <Input bind:value={secondNumb} type="text" maxlength={1} placeholder={'-'} style="padding:0;"/>
+    <Input bind:value={thirdNumb} type="text" maxlength={1} placeholder={'-'} style="padding:0;"/>
+    <Input bind:value={fourthNumb} type="text" maxlength={1} placeholder={'-'} style="padding:0;"/>
+    <Input bind:value={fifthNumb} type="text" maxlength={1} placeholder={'-'} style="padding:0;"/>
 </div>
 
 <style lang="sass">
