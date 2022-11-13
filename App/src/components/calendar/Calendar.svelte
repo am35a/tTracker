@@ -9,7 +9,10 @@
         currentDate: number = Calendar.getDate(),
         daysInThisMonth: number
 
-    export let date: any
+    export let date: any = {
+        month: undefined as number,
+        date: undefined as number
+    }
     
     $: {
         daysInThisMonth = new Date(currentYear, currentMonth + 1, 0).getDate()
@@ -22,7 +25,7 @@
 <div class="calendar">
     <div class="months">
         {#each months as month, i }
-            <Button on:click={() => currentMonth = i} class="sm" disabled={currentMonth === i}>{month}</Button>
+            <Button on:click={() => currentMonth = i} class="sm transparent" disabled={currentMonth === i}>{month}</Button>
         {/each}
     </div>
     <div class="days">
