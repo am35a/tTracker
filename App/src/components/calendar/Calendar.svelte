@@ -55,7 +55,8 @@
             gap: var(--gap-xs)
             padding: 0 var(--padding-xs)
             overflow-y: hidden
-            overflow-x: auto
+            overflow-x: auto // will to hidden
+            touch-action: pan-x
             scrollbar-width: none
             &::-webkit-scrollbar
                 display: none
