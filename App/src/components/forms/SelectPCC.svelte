@@ -1,6 +1,6 @@
 <!-- https://flagicons.lipis.dev/ -->
 <script lang="ts">
-    import {user} from '../../store/store'
+    import {user} from '$str/store'
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
