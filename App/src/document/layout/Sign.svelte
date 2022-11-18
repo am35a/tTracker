@@ -9,7 +9,7 @@
     import InputPhone from '$cmp/forms/InputPhone.svelte'
     import InputCode from '$cmp/forms/InputCode.svelte'
 
-    import { user } from '../../store/store'
+    import { user } from '$str/store'
 
     let valuePhone = {
         code: $user.phone.code as string,

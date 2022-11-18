@@ -10,7 +10,9 @@
         "baseUrl": "./",
         "paths": {
             "$cmp": ["./src/components"],
-            "$cmp/*": ["./src/components/*"]
+            "$cmp/*": ["./src/components/*"],
+            "$str": ["./src/store"],
+            "$str/*": ["./src/store/*"]
         },
 
         /**

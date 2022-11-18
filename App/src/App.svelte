@@ -11,7 +11,7 @@
     import {
         appData,
         user
-    } from './store/store'
+    } from '$str/store'
 </script>
 
 <Head/>
