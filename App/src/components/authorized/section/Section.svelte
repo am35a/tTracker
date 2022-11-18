@@ -19,7 +19,7 @@
             grid-column: 1/2
             grid-row: 2/3
             display: grid
-            // grid-template-columns: repeat(2, 1fr)
+            grid-template-columns: repeat(2, 1fr)
             gap: var(--gap-sm)
             padding: var(--padding-sm)
             align-content: start

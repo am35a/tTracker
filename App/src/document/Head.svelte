@@ -72,6 +72,9 @@
 
         --section-width: 256px
 
+        --color-1: #A970FF
+        --color-light-1: rgb(225, 205, 255)
+
     *,
     ::before,
     ::after
