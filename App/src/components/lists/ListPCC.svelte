@@ -1,7 +1,7 @@
 <script lang="ts">
     import { fly } from 'svelte/transition'
     
-    import { user } from '../../store/store'
+    import { user } from '$str/store'
 
     import Input from "../forms/Input.svelte"
     import Button from "../buttons/Button.svelte"

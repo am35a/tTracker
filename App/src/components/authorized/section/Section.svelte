@@ -18,8 +18,13 @@
         .list
             grid-column: 1/2
             grid-row: 2/3
-            column-count: 2
-            column-gap: var(--gap-sm)
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: var(--gap-sm)
+            padding: var(--padding-sm)
+            align-content: start
+            // column-count: 2
+            // column-gap: var(--gap-sm)
             overflow-y: auto
             overflow-x: hidden
 </style>

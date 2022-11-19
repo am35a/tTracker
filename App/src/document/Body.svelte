@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { user } from '../store/store'
+    import { user } from '$str/store'
 
     $: $user.isAuthorized ? document.body.classList.add('inside') : document.body.classList.remove('inside')
 

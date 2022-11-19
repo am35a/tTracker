@@ -49,6 +49,7 @@
         border-bottom-left-radius: var(--border-radius-lg)
         border-bottom-right-radius: var(--border-radius-lg)
         box-shadow: var(--box-shadow-md)
+        z-index: 1
         .months,
         .days
             display: inline-flex

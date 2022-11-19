@@ -9,15 +9,14 @@
     import InputPhone from '$cmp/forms/InputPhone.svelte'
     import InputCode from '$cmp/forms/InputCode.svelte'
 
-    import { user, session } from '../../store/store'
-
+    import { user, session } from '$str/store'
     import { axiosPublic } from "../../assets/ts/api";
 
 
     const getTokenFn = async () => {
       const params = {
           email: 'test@test.com.au',
-          password: 'test'
+          password: 'test1'
         }
 
       try {
@@ -41,6 +40,9 @@
       } catch (error) {
         localStorage.removeItem("session");
         $user.isAuthorized = false
+        $user.modal.type = 'error'
+        $user.modal.title = 'Sign in error'
+        $user.modal.text = error.response.data.detail
       }
     };
 
@@ -68,7 +70,6 @@
         localStorage.removeItem("user");
       }
     };
-
 
     let valuePhone = {
         code: $user.phone.code as string,
