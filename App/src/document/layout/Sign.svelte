@@ -14,62 +14,38 @@
 
 
     const getTokenFn = async () => {
-      const params = {
-          email: 'test@test.com.au',
-          password: 'test1'
+        const params = {
+            email: email,
+            password: password
         }
 
-      try {
-        const response = await axiosPublic.post("/token/", params);
+        try {
+            const response = await axiosPublic.post("/token/", params);
 
-        const session = response.data;
-        console.log(session)
+            const session = response.data;
 
-        if (!session?.access) {
-          localStorage.removeItem("session");
-          $user.isAuthorized = false
+            if (!session?.access) {
+              localStorage.removeItem("session");
+              $user.isAuthorized = false
+            }
+            else {
+                $user.isAuthorized = true
+            }
+
+            localStorage.setItem("session", JSON.stringify(session));
+
+            return session;
+        } catch (error) {
+            localStorage.removeItem("session");
+            $user.isAuthorized = false
+            $user.modal.type = 'error'
+            $user.modal.title = 'Sign in error'
+            $user.modal.text = error.response.data.detail
         }
-        else {
-            $user.isAuthorized = true
-        }
-
-
-        localStorage.setItem("session", JSON.stringify(session));
-
-        return session;
-      } catch (error) {
-        localStorage.removeItem("session");
-        $user.isAuthorized = false
-        $user.modal.type = 'error'
-        $user.modal.title = 'Sign in error'
-        $user.modal.text = error.response.data.detail
-      }
     };
 
-
-    const refreshTokenFn = async () => {
-      const session = JSON.parse(localStorage.getItem("session"));
-
-      try {
-        const response = await axiosPublic.post("/user/refresh", {
-          refreshToken: session?.refreshToken,
-        });
-
-        const { session } = response.data;
-
-        if (!session?.accessToken) {
-          localStorage.removeItem("session");
-          localStorage.removeItem("user");
-        }
-
-        localStorage.setItem("session", JSON.stringify(session));
-
-        return session;
-      } catch (error) {
-        localStorage.removeItem("session");
-        localStorage.removeItem("user");
-      }
-    };
+    let email = "test@test.com.au"
+    let password = "test";
 
     let valuePhone = {
         code: $user.phone.code as string,
@@ -109,8 +85,8 @@
         </Header>
         <Section>
             <svelte:fragment slot="body">
-                <Input bind:value={valueEmail} type={'email'}/>
-                <Input bind:value={valuePassword} type={'password'}/>
+                <Input bind:value={email} type={'email'}/>
+                <Input bind:value={password} type={'password'}/>
                 <Button on:click={getTokenFn}>SIGN IN</Button>
             </svelte:fragment>
         </Section>
