@@ -9,7 +9,7 @@ export const appData = writable(
 
 export let user: any = writable(
     {
-        isAuthorized: true as boolean, // false as default
+        isAuthorized: false, // false as default
         signType: 'email' as string,
         email: {
             address: 'goto@ttracker.dev' as string,
@@ -30,3 +30,5 @@ export let user: any = writable(
         page: 1 as number // 1 is organizations and as default
     }
 )
+
+export let session = writable()

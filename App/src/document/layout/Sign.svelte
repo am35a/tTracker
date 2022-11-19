@@ -9,7 +9,66 @@
     import InputPhone from '$cmp/forms/InputPhone.svelte'
     import InputCode from '$cmp/forms/InputCode.svelte'
 
-    import { user } from '../../store/store'
+    import { user, session } from '../../store/store'
+
+    import { axiosPublic } from "../../assets/ts/api";
+
+
+    const getTokenFn = async () => {
+      const params = {
+          email: 'test@test.com.au',
+          password: 'test'
+        }
+
+      try {
+        const response = await axiosPublic.post("/token/", params);
+
+        const session = response.data;
+        console.log(session)
+
+        if (!session?.access) {
+          localStorage.removeItem("session");
+          $user.isAuthorized = false
+        }
+        else {
+            $user.isAuthorized = true
+        }
+
+
+        localStorage.setItem("session", JSON.stringify(session));
+
+        return session;
+      } catch (error) {
+        localStorage.removeItem("session");
+        $user.isAuthorized = false
+      }
+    };
+
+
+    const refreshTokenFn = async () => {
+      const session = JSON.parse(localStorage.getItem("session"));
+
+      try {
+        const response = await axiosPublic.post("/user/refresh", {
+          refreshToken: session?.refreshToken,
+        });
+
+        const { session } = response.data;
+
+        if (!session?.accessToken) {
+          localStorage.removeItem("session");
+          localStorage.removeItem("user");
+        }
+
+        localStorage.setItem("session", JSON.stringify(session));
+
+        return session;
+      } catch (error) {
+        localStorage.removeItem("session");
+        localStorage.removeItem("user");
+      }
+    };
+
 
     let valuePhone = {
         code: $user.phone.code as string,
@@ -51,7 +110,7 @@
             <svelte:fragment slot="body">
                 <Input bind:value={valueEmail} type={'email'}/>
                 <Input bind:value={valuePassword} type={'password'}/>
-                <Button on:click={signByEmail}>SIGN IN</Button>
+                <Button on:click={getTokenFn}>SIGN IN</Button>
             </svelte:fragment>
         </Section>
     {:else if $user.signType === 'phone'}
