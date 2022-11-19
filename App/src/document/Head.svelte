@@ -72,7 +72,7 @@
 
         --section-width: 256px
 
-        --color-1: #A970FF
+        --color-1: rgb(170, 110, 255)
         --color-light-1: rgb(225, 205, 255)
 
     *,
