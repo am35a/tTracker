@@ -6,30 +6,62 @@
     import Footer from '$cmp/authorized/footer/Footer.svelte'
     import Calendar from '$cmp/calendar/Calendar.svelte'
     import Filter from '$cmp/filters/Type1.svelte'
+
+
+    let organizationsArrObj: any = [
+            {
+                "organization": {
+                    "id": 5,
+                    "name": "theAD",
+                    "logo": "http://127.0.0.1:8000/media/site_5/GIF_Loading_Animation_Transparent.gif"
+                },
+                "messages": 2,
+                "tasks": 23,
+                "jobs": 0
+            },
+            {
+                "organization": {
+                    "id": 6,
+                    "name": "meMate",
+                    "logo": "http://127.0.0.1:8000/media/site_6/img-logo.png"
+                },
+                "messages": 0,
+                "tasks": 0,
+                "jobs": 0
+            },
+            {
+                "organization": {
+                    "id": 61,
+                    "name": "TEST",
+                    "logo": "http://127.0.0.1:8000/media/no_org.png"
+                },
+                "messages": 0,
+                "tasks": 0,
+                "jobs": 2
+            }
+        ]
 </script>
 
 <Main>
     <Header/>
     <Section>
         <Calendar slot="calendar"/>
-        <!-- {#each Array(55) as _, i } -->
-            <Card>
+        {#each organizationsArrObj as obj }
+            <Card class="color-1 active">
                 <svelte:fragment slot="aside">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z"/>
-                    </svg>
+                    <img src={obj.organization.logo} alt={obj.organization.name}>
                 </svelte:fragment>
                 <svelte:fragment slot="header">
-                    AMD
+                    {obj.organization.name}
                 </svelte:fragment>
                 <svelte:fragment slot="body">
-                    Here will be extra info or atension message.
+                    <!-- Here will be extra info or atension message. -->
                 </svelte:fragment>
                 <svelte:fragment slot="jobs">
-                    21
+                    {obj.jobs}
                 </svelte:fragment>
             </Card>
-        <!-- {/each} -->
+        {/each}
         <Filter slot="filter"/>
     </Section>
     <Footer/>
