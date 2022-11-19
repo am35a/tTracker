@@ -9,7 +9,43 @@
     import InputPhone from '$cmp/forms/InputPhone.svelte'
     import InputCode from '$cmp/forms/InputCode.svelte'
 
-    import { user } from '$str/store'
+    import { user, session } from '$str/store'
+    import { axiosPublic } from "../../assets/ts/api";
+
+
+    const getTokenFn = async () => {
+        const params = {
+            email: email,
+            password: password
+        }
+
+        try {
+            const response = await axiosPublic.post("/token/", params);
+
+            const session = response.data;
+
+            if (!session?.access) {
+              localStorage.removeItem("session");
+              $user.isAuthorized = false
+            }
+            else {
+                $user.isAuthorized = true
+            }
+
+            localStorage.setItem("session", JSON.stringify(session));
+
+            return session;
+        } catch (error) {
+            localStorage.removeItem("session");
+            $user.isAuthorized = false
+            $user.modal.type = 'error'
+            $user.modal.title = 'Sign in error'
+            $user.modal.text = error.response.data.detail
+        }
+    };
+
+    let email = "test@test.com.au"
+    let password = "test";
 
     let valuePhone = {
         code: $user.phone.code as string,
@@ -49,9 +85,9 @@
         </Header>
         <Section>
             <svelte:fragment slot="body">
-                <Input bind:value={valueEmail} type={'email'}/>
-                <Input bind:value={valuePassword} type={'password'}/>
-                <Button on:click={signByEmail}>SIGN IN</Button>
+                <Input bind:value={email} type={'email'}/>
+                <Input bind:value={password} type={'password'}/>
+                <Button on:click={getTokenFn}>SIGN IN</Button>
             </svelte:fragment>
         </Section>
     {:else if $user.signType === 'phone'}
