@@ -12,9 +12,10 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            $cmp: path.resolve('./src/components'),
+            $str: path.resolve('./src/store'),
             $doc: path.resolve('./src/document'),
-            $str: path.resolve('./src/store')
+            $lay: path.resolve('./src/layout'),
+            $cmp: path.resolve('./src/components')
         }
     }
 })

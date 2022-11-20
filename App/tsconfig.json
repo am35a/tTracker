@@ -9,12 +9,14 @@
         "forceConsistentCasingInFileNames": true,
         "baseUrl": "./",
         "paths": {
-            "$cmp": ["./src/components"],
-            "$cmp/*": ["./src/components/*"],
+            "$str": ["./src/store"],
+            "$str/*": ["./src/store/*"],
             "$doc": ["./src/document"],
             "$doc/*": ["./src/document/*"],
-            "$str": ["./src/store"],
-            "$str/*": ["./src/store/*"]
+            "$lay": ["./src/layout"],
+            "$lay/*": ["./src/layout/*"],
+            "$cmp": ["./src/components"],
+            "$cmp/*": ["./src/components/*"]
         },
 
         /**

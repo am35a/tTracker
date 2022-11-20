@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Section from '$cmp/authorized/section/Section.svelte'
+    import Section from './section/Section.svelte'
 </script>
 
 <Section>

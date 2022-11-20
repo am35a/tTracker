@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Section from '$cmp/authorized/section/Section.svelte'
-    import Card from '$cmp/authorized/section/card/Card.svelte'
+    import Section from './section/Section.svelte'
+    import Card from '$cmp/cards/Card.svelte'
     import Calendar from '$cmp/calendar/Calendar.svelte'
     import Filter from '$cmp/filters/Type1.svelte'
 
