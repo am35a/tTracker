@@ -1,9 +1,10 @@
 <script lang="ts">
+        import { fly } from 'svelte/transition'
 </script>
 
 <section>
     <slot name="calendar"></slot>
-    <div class="list">
+    <div class="list" transition:fly="{{ x: +200, duration: 500 }}">
         <slot></slot>
     </div>
     <slot name="filter"></slot>
@@ -11,10 +12,12 @@
 
 <style lang="sass">
     section
+        grid-column: 1/-1
+        grid-row: 2/3
         display: grid
         grid-template-columns: 1fr
         grid-template-rows: max-content 1fr
-        overflow-y: hidden
+        overflow: hidden
         .list
             grid-column: 1/2
             grid-row: 2/3

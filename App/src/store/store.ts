@@ -28,7 +28,8 @@ export let user: any = writable(
             text: ''
         } as any,
         page: {
-            current: 1 as number, // 1 is organizations and as default
+            titlesArr: ['Organizations', 'Jobs', 'Confirmed', 'In progress', 'Statistics', 'Profile'],
+            current: 0 as number, // 0 is organizations and as default
             calendar: false as boolean,
             filter: false as boolean
         } as any

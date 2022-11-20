@@ -4,11 +4,19 @@
 
 <footer>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <div on:click={() => $user.page.current = 0}>
+        <svg
+            class={$user.page.current === 0 ? 'active' : ''}
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5z"/>
+        </svg>
+    </div>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div on:click={() => $user.page.current = 1}>
         <svg
             class={$user.page.current === 1 ? 'active' : ''}
             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5z"/>
+            <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
         </svg>
     </div>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -24,21 +32,13 @@
         <svg
             class={$user.page.current === 3 ? 'active' : ''}
             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+            <path d="M4 0h8a2 2 0 0 1 2 2v7H2V2a2 2 0 0 1 2-2zM2 12h12v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2zM.5 10a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5z"/>
         </svg>
     </div>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div on:click={() => $user.page.current = 4}>
         <svg
             class={$user.page.current === 4 ? 'active' : ''}
-            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M4 0h8a2 2 0 0 1 2 2v7H2V2a2 2 0 0 1 2-2zM2 12h12v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2zM.5 10a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5z"/>
-        </svg>
-    </div>
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div on:click={() => $user.page.current = 5}>
-        <svg
-            class={$user.page.current === 5 ? 'active' : ''}
             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
             <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-2 11.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1z"/>
         </svg>
