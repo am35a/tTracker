@@ -2,7 +2,7 @@
     import Head from '$doc/Head.svelte'
     import Body from '$doc/Body.svelte'
 
-    import Sign from '$doc/routes/Sign.svelte'
+    import Signs from './layout/signs/Signs.svelte'
     import Organizations from '$doc/routes/Organizations.svelte'
     import Jobs from '$doc/routes/Jobs.svelte'
     import Confirmed from '$doc/routes/Confirmed.svelte'
@@ -29,7 +29,7 @@
 <Body/>
 
 {#if !$user.isAuthorized}
-    <Sign/>
+    <Signs/>
     <LogoHalf/>
     <ListPCC/>
     <ModalAlert/>

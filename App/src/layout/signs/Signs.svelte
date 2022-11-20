@@ -1,9 +1,11 @@
 <script lang="ts">
-    import Main from '$cmp/signs/Main.svelte'
-    import Header from '$cmp/signs/header/Header.svelte'
-    import Section from '$cmp/signs/section/Section.svelte'
-    import Footer from '$cmp/signs/footer/Footer.svelte'
+    // layout
+    import Main from './main/Main.svelte'
+    import Header from './main/header/Header.svelte'
+    import Section from './main/section/Section.svelte'
+    import Footer from './main/footer/Footer.svelte'
 
+    // components
     import Button from '$cmp/buttons/Button.svelte'
     import Input from '$cmp/forms/Input.svelte'
     import InputPhone from '$cmp/forms/InputPhone.svelte'
