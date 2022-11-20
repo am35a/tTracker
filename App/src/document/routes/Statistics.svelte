@@ -6,10 +6,10 @@
 
 </script>
 
-<Main>
-    <Header title={'Statistics'}/>
+<!-- <Main> -->
+    <!-- <Header title={'Statistics'}/> -->
     <Section>
         Statistics
     </Section>
-    <Footer/>
-</Main>
+    <!-- <Footer/> -->
+<!-- </Main> -->
