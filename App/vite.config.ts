@@ -13,6 +13,7 @@ export default defineConfig({
     resolve: {
         alias: {
             $cmp: path.resolve('./src/components'),
+            $doc: path.resolve('./src/document'),
             $str: path.resolve('./src/store')
         }
     }
