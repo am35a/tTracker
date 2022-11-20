@@ -12,7 +12,6 @@
 
     import Main from '$cmp/authorized/Main.svelte'
     import Header from '$cmp/authorized/header/Header.svelte'
-    // import Section from '$cmp/authorized/section/Section.svelte'
     import Footer from '$cmp/authorized/footer/Footer.svelte'
 
 
@@ -36,8 +35,7 @@
     <ModalAlert/>
 {:else}
     <Main>
-        11
-        <!-- <Header title={$user.page.titleArr[$user.page.current]}/>
+        <Header title={$user.page.titlesArr[$user.page.current]}/>
         {#if $user.page.current === 0}
             <Organizations/>
         {:else if $user.page.current === 1}
@@ -51,6 +49,6 @@
         {:else if $user.page.current === 5}
             <Profile/>
         {/if}
-        <Footer/> -->
+        <Footer/>
     </Main>
 {/if}

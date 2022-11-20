@@ -1,7 +1,5 @@
 <script lang="ts">
     import { fly } from 'svelte/transition'
-    // import { user } from '$str/store'
-    // !$user.isAuthorized
 </script>
 
 <main transition:fly="{{ x: +200, duration: 500 }}">

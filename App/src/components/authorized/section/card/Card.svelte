@@ -59,6 +59,7 @@
             padding: var(--padding-xs)
             justify-content: center
             border-radius: var(--border-radius-sm)
+            overflow: hidden
         .container
             display: grid
             gap: var(--gap-xs)
