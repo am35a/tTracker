@@ -11,6 +11,8 @@
         "paths": {
             "$cmp": ["./src/components"],
             "$cmp/*": ["./src/components/*"],
+            "$doc": ["./src/document"],
+            "$doc/*": ["./src/document/*"],
             "$str": ["./src/store"],
             "$str/*": ["./src/store/*"]
         },
