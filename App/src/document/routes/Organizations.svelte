@@ -43,7 +43,7 @@
 </script>
 
 <Main>
-    <Header/>
+    <Header title={'Organizations'}/>
     <Section>
         <Calendar slot="calendar"/>
         {#each organizationsArrObj as obj }
