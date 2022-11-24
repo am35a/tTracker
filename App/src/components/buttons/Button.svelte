@@ -36,7 +36,7 @@
             font-size: var(--font-size-md)
         &:not(:disabled)
             &.transparent
-                background-color: transparent
+                background: transparent
             &:not(.transparent)
                 background-color: var(--background-color-button)
             color: var(--color-button)
@@ -45,4 +45,7 @@
             color: var(--color-button-disabled)
             background-color: var(--background-color-button-disabled)
             cursor: not-allowed
+            &.mute
+                color: var(--color-button-mute)
+                background-color: var(--background-color-button-mute)
 </style>

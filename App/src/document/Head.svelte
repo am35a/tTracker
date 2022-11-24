@@ -31,10 +31,14 @@
         --outline-color-form: rgba(0, 2, 4, .25)
         --border-color-form: rgba(0, 2, 4, .25)
 
-        --background-color-button: rgba(0, 2, 4, .05) 
-        --background-color-button-disabled: rgba(14, 110, 256, .25) 
-        --color-button: rgba(0, 2, 4, .25)
-        --color-button-disabled: rgba(14, 110, 256, 1)
+        --color-button: hsl(0, 0%, 50%)
+        --background-color-button: hsl(0, 0%, 85%) 
+
+        --color-button-disabled: hsl(215, 100%, 50%)
+        --background-color-button-disabled: hsl(215, 100%, 85%)
+        
+        --color-button-mute: hsl(215, 100%, 85%)
+        --background-color-button-mute: hsl(215, 100%, 95%)
 
         --height-form-lg: 48px
         --height-form-md: 32px

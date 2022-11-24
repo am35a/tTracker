@@ -22,23 +22,23 @@
         }
 
         try {
-            const response = await axiosPublic.post("/token/", params);
+            const response = await axiosPublic.post('/token/', params)
 
-            const session = response.data;
+            const session = response.data
 
             if (!session?.access) {
-              localStorage.removeItem("session");
+              localStorage.removeItem('session')
               $user.isAuthorized = false
             }
             else {
                 $user.isAuthorized = true
             }
 
-            localStorage.setItem("session", JSON.stringify(session));
+            localStorage.setItem('session', JSON.stringify(session))
 
             return session;
         } catch (error) {
-            localStorage.removeItem("session");
+            localStorage.removeItem('session')
             $user.isAuthorized = false
             $user.modal.type = 'error'
             $user.modal.title = 'Sign in error'
@@ -46,26 +46,24 @@
         }
     };
 
-    let email = "test@test.com.au"
-    let password = "test";
-
-    let valuePhone = {
+    let email = 'test@test.com.au',
+        password = 'test',
+        valuePhone = {
         code: $user.phone.code as string,
         number: $user.phone.number as string
-    } as any
-    let valueEmail: string = $user.email.address
+    } as any,
+        valueEmail: string = $user.email.address,
+        valuePassword: string = ''
 
-    let valuePassword: string = ''
-
-    function signByEmail() {
-        if ( valueEmail === $user.email.address && valuePassword === $user.email.password )
-            $user.isAuthorized = true
-        else {
-            $user.modal.type = 'error'
-            $user.modal.title = 'Sign in error'
-            $user.modal.text = 'Wrong email or password'
-        }
-    }
+    // function signByEmail() {
+    //     if ( valueEmail === $user.email.address && valuePassword === $user.email.password )
+    //         $user.isAuthorized = true
+    //     else {
+    //         $user.modal.type = 'error'
+    //         $user.modal.title = 'Sign in error'
+    //         $user.modal.text = 'Wrong email or password'
+    //     }
+    // }
     function signByPhone () {
         if ( valuePhone.number === $user.phone.number && valuePassword === $user.phone.password )
             $user.isAuthorized = true
@@ -89,7 +87,11 @@
             <svelte:fragment slot="body">
                 <Input bind:value={email} type={'email'}/>
                 <Input bind:value={password} type={'password'}/>
-                <Button on:click={getTokenFn}>SIGN IN</Button>
+                <Button
+                    class="{(email.length > 0 && password.length > 0) || 'mute'}"
+                    on:click={getTokenFn}
+                    disabled={!(email.length > 0 && password.length > 0)}
+                >SIGN IN</Button>
             </svelte:fragment>
         </Section>
     {:else if $user.signType === 'phone'}
@@ -123,7 +125,7 @@
     {/if}
     <Footer>
         <svelte:fragment slot="footerLeft">
-            <Button on:click={() => $user.signType = 'welcome'} disabled> <!--disabled = {$user.signType === 'welcome'}-->
+            <Button on:click={() => $user.signType = 'welcome'} class="mute" disabled> <!--disabled = {$user.signType === 'welcome'}-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                     <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
