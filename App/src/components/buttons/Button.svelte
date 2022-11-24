@@ -36,7 +36,7 @@
             font-size: var(--font-size-md)
         &:not(:disabled)
             &.transparent
-                background: transparent
+                background-color: transparent
             &:not(.transparent)
                 background-color: var(--background-color-button)
             color: var(--color-button)
