@@ -83,6 +83,7 @@
         .list
             grid-column: 1/3
             display: grid
+            grid-template-rows: 1fr
             align-items: end
             overflow: auto
             cursor: pointer
