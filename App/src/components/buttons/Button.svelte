@@ -45,4 +45,7 @@
             color: var(--color-button-disabled)
             background-color: var(--background-color-button-disabled)
             cursor: not-allowed
+            &.mute
+                color: var(--color-button-mute)
+                background-color: var(--background-color-button-mute)
 </style>
