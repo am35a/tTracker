@@ -4,6 +4,12 @@
     import Calendar from '$cmp/calendar/Calendar.svelte'
     import Filter from '$cmp/filters/Type1.svelte'
 
+    import { organization } from '$str/store'
+
+    function chooseOrganization(id: number, name: string) {
+        $organization.id = id
+        $organization.name = name
+    }
 
     let organizationsArrObj: any = [
             {
@@ -41,8 +47,12 @@
 
 <Section>
     <Calendar slot="calendar"/>
-    {#each organizationsArrObj as obj }
-        <Card class="color-1 active">
+    {#each organizationsArrObj as obj, i}
+        <Card
+            on:click={() => chooseOrganization(obj.organization.id, obj.organization.name)}
+            class="color {!($organization.id === obj.organization.id) || 'active'}"
+            style="--color: var(--color-{i}); --color-light: var(--color-light-{i})"
+        >
             <svelte:fragment slot="aside">
                 <img src={obj.organization.logo} alt={obj.organization.name}>
             </svelte:fragment>
