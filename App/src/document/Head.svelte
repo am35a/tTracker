@@ -76,8 +76,27 @@
 
         --section-width: 256px
 
-        --color-1: rgb(170, 110, 255)
-        --color-light-1: rgb(225, 205, 255)
+
+        --color-0: hsl(216, 98%, 52%)
+        --color-light-0: hsl(216, 98%, 86.6%)
+        --color-1: hsl(261, 51%, 51%)
+        --color-light-1: hsl(261, 51%, 85%)
+        --color-2: hsl(354, 70%, 53%)
+        --color-light-2: hsl(354, 70%, 88.3%)
+        --color-3: hsl(45, 100%, 51%)
+        --color-light-3: hsl(45, 100%, 85%)
+        --color-4: hsl(162, 72%, 46%)
+        --color-light-4: hsl(162, 72%, 76.6%)
+        --color-5: hsl(263, 90%, 51%)
+        --color-light-5: hsl(263, 90%, 85%)
+        --color-6: hsl(330, 66%, 52%)
+        --color-light-6: hsl(330, 66%, 86.6%)
+        --color-7: hsl(27, 98%, 53%)
+        --color-light-7: hsl(27, 98%, 88.3%)
+        --color-8: hsl(152, 69%, 31%)
+        --color-light-8: hsl(152, 69%, 51.6%)
+        --color-9: hsl(190, 90%, 50%)
+        --color-light-9: hsl(190, 90%, 83.3%)
 
     *,
     ::before,

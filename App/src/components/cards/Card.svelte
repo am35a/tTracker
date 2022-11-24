@@ -1,6 +1,7 @@
 <div
     {...$$restProps}
     class:card={true}
+    on:click
 >
     <div class="aside">
         <slot name="aside">
@@ -42,15 +43,18 @@
         border-radius: var(--border-radius-md)
         padding: var(--padding-xs)
         box-shadow: var(--box-shadow-sm)
-        outline-offset: -1px  
+        cursor: pointer
+        outline-offset: -1px
+        outline: 2px solid transparent
+        transition: outline-color 250ms
         &.color
-            &-1
-                background-color: var(--color-light-1)
+                background-color: var(--color-light)
                 &.active
-                    outline: 1px solid var(--color-1)
+                    box-shadow: var(--box-shadow-md)
+                    outline-color: var(--color)
                 .aside
                     background-color: var(--face-background-color)
-                    color: var(--color-1)
+                    color: var(--color)
         .aside
             grid-column: 1/2
             grid-row: 1/-1

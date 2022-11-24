@@ -36,4 +36,11 @@ export let user: any = writable(
     }
 )
 
+export let organization: any = writable(
+    {
+        id: 0 as number,
+        name: '' as string
+    }
+)
+
 export let session = writable()
