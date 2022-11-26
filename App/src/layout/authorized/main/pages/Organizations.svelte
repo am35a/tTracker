@@ -46,7 +46,7 @@
 </script>
 
 <Section>
-    <Calendar slot="calendar"/>
+    <Calendar slot="header"/>
     {#each organizationsArrObj as obj, i}
         <Card
             on:click={() => chooseOrganization(obj.organization.id, obj.organization.name)}
@@ -67,5 +67,5 @@
             </svelte:fragment>
         </Card>
     {/each}
-    <Filter slot="filter"/>
+    <Filter slot="footer"/>
 </Section>
