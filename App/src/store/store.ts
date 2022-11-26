@@ -9,7 +9,7 @@ export const appData = writable(
 
 export let user: any = writable(
     {
-        isAuthorized: true, // false as default
+        isAuthorized: false, // false as default
         info: {
             firstName: '' as string,
             lastName: '' as string
