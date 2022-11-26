@@ -69,6 +69,5 @@
                 margin: auto
                 border: 2px solid currentColor
                 border-radius: 2px
-                color: var(--color-button)
-                
+                color: var(--color-button)                
 </style>

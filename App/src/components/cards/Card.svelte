@@ -63,7 +63,12 @@
             padding: var(--padding-xs)
             justify-content: center
             border-radius: var(--border-radius-sm)
-            overflow: hidden
+            > :global(img)
+                width: 100%
+                max-width: 16px
+                height: auto
+                max-height: 16px
+                overflow: hidden
         .container
             display: grid
             gap: var(--gap-xs)

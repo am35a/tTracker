@@ -69,9 +69,11 @@
             outline: none
             &.sm
                 height: var(--height-form-sm)
+                &::placeholder
+                    font-size: var(--font-size-xs)
             &::placeholder
                 color: rgba(0, 0, 0, .25)
-                font-size: var(--font-size-xs)
+                font-size: var(--font-size-sm)
             &:invalid
                 color: rgba(255, 0, 0, .75)
 

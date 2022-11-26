@@ -3,11 +3,11 @@
 </script>
 
 <section>
-    <slot name="calendar"></slot>
+    <slot name="header"></slot>
     <div class="list" transition:fly="{{ x: +200, duration: 500 }}">
         <slot></slot>
     </div>
-    <slot name="filter"></slot>
+    <slot name="footer"></slot>
 </section>
 
 <style lang="sass">
@@ -22,7 +22,7 @@
             grid-column: 1/2
             grid-row: 2/3
             display: grid
-            grid-template-columns: repeat(2, 1fr)
+            grid-template-columns: 1fr // repeat(2, 1fr)
             gap: var(--gap-sm)
             padding: var(--padding-sm)
             align-content: start
