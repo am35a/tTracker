@@ -1,12 +1,13 @@
 <script lang="ts">
-    import { user } from '$str/store'
-
-    export let title: string = '...'
+    import { organization, user } from '$str/store'
 </script>
 
 <header>
     <div>
-        {title}
+        <span class="title">{$user.page.titlesArr[$user.page.current]}</span>
+        {#if $user.page.current === 1}
+            <span class="subtitle" style="--color-light: var(--color-light-{$organization.color})"> : {$organization.name}</span>
+        {/if}
     </div>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <svg
@@ -29,7 +30,12 @@
         background-color: var(--face-background-color)
         color: var(--mute-color-25)
         font-size: var(--font-size-lg)
-        font-weight: 700
+        .title
+            font-weight: 700
+        .subtitle
+            --color-light: currentColor
+            color: var(--color-light)
+            font-weight: 500
         .active
             color: var(--main-color-75)
 </style>
