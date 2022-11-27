@@ -11,8 +11,8 @@ export let user: any = writable(
     {
         isAuthorized: false, // false as default
         info: {
-            firstName: '' as string,
-            lastName: '' as string
+            firstName: 'John' as string,
+            lastName: 'Rasputin' as string
         } as any,
         signType: 'email' as string,
         email: {
