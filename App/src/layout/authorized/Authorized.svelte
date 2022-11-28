@@ -14,7 +14,7 @@
 </script>
 
 <Main>
-    <Header title={$user.page.titlesArr[$user.page.current]}/>
+    <Header/>
     {#if $user.page.current === 0}
         <Organizations/>
     {:else if $user.page.current === 1}

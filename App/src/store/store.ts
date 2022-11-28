@@ -9,7 +9,7 @@ export const appData = writable(
 
 export let user: any = writable(
     {
-        isAuthorized: false, // false as default
+        isAuthorized: true, // false as default
         info: {
             firstName: 'John' as string,
             lastName: 'Rasputin' as string
@@ -43,7 +43,8 @@ export let user: any = writable(
 export let organization: any = writable(
     {
         id: 0 as number,
-        name: '' as string
+        name: '' as string,
+        color: 0 as number
     }
 )
 
