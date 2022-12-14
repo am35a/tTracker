@@ -5,7 +5,7 @@
     import Calendar from '$cmp/calendar/Calendar.svelte'
     import Filter from '$cmp/filters/Type1.svelte'
 
-    import { access_token, user, organization } from '$str/store'
+    import { user, organization } from '$str/store'
     import { axiosPrivate } from "../../../../assets/ts/api";
 
     function chooseOrganization(id: number, name: string, color: number) {
