@@ -1,10 +1,12 @@
 <script lang="ts">
+    import { onMount } from 'svelte';
     import Section from './section/Section.svelte'
     import Card from '$cmp/cards/Card.svelte'
     import Calendar from '$cmp/calendar/Calendar.svelte'
     import Filter from '$cmp/filters/Type1.svelte'
 
-    import { organization, user } from '$str/store'
+    import { access_token, user, organization } from '$str/store'
+    import { axiosPrivate } from "../../../../assets/ts/api";
 
     function chooseOrganization(id: number, name: string, color: number) {
         $organization.id = id
@@ -14,38 +16,13 @@
         $user.page.current = 1
     }
 
-    let organizationsArrObj: any = [
-            {
-                "organization": {
-                    "id": 5,
-                    "name": "theAD",
-                    "logo": "http://127.0.0.1:8000/media/site_5/GIF_Loading_Animation_Transparent.gif"
-                },
-                "messages": 2,
-                "tasks": 23,
-                "jobs": 0
-            },
-            {
-                "organization": {
-                    "id": 6,
-                    "name": "meMate",
-                    "logo": "http://127.0.0.1:8000/media/site_6/img-logo.png"
-                },
-                "messages": 0,
-                "tasks": 0,
-                "jobs": 0
-            },
-            {
-                "organization": {
-                    "id": 61,
-                    "name": "TEST",
-                    "logo": "http://127.0.0.1:8000/media/no_org.png"
-                },
-                "messages": 0,
-                "tasks": 0,
-                "jobs": 2
-            }
-        ]
+    let organizationsArrObj: any = [];
+
+    onMount(async () => {
+        const response = await axiosPrivate().get('/organizations/');
+        organizationsArrObj = response.data;
+    });
+
 </script>
 
 <Section>
