@@ -11,7 +11,7 @@
     import InputPhone from '$cmp/forms/InputPhone.svelte'
     import InputCode from '$cmp/forms/InputCode.svelte'
 
-    import { user, session } from '$str/store'
+    import { user, access_token } from '$str/store'
     import { axiosPublic } from "../../assets/ts/api";
 
 
@@ -22,23 +22,15 @@
         }
 
         try {
-            const response = await axiosPublic.post('/token/', params)
+            const response = await axiosPublic.post('/token/', params);
+            const tokens = response.data;
 
-            const session = response.data
+            access_token.set(tokens.access);
+            $user.isAuthorized = true;
 
-            if (!session?.access) {
-              localStorage.removeItem('session')
-              $user.isAuthorized = false
-            }
-            else {
-                $user.isAuthorized = true
-            }
-
-            localStorage.setItem('session', JSON.stringify(session))
-
-            return session;
+            return true;
         } catch (error) {
-            localStorage.removeItem('session')
+            access_token.set("");
             $user.isAuthorized = false
             $user.modal.type = 'error'
             $user.modal.title = 'Sign in error'
@@ -46,8 +38,8 @@
         }
     };
 
-    let email = 'test@test.com.au',
-        password = 'test',
+    let email = 'autonuke@gmail.com',
+        password = '7924',
         valuePhone = {
         code: $user.phone.code as string,
         number: $user.phone.number as string

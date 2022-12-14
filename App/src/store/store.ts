@@ -9,7 +9,7 @@ export const appData = writable(
 
 export let user: any = writable(
     {
-        isAuthorized: true, // false as default
+        isAuthorized: false, // false as default
         info: {
             firstName: 'John' as string,
             lastName: 'Rasputin' as string
@@ -48,4 +48,5 @@ export let organization: any = writable(
     }
 )
 
-export let session = writable()
+export let access_token = writable("")
+export let refresh_token = writable("")
