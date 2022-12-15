@@ -1,14 +1,18 @@
 <script lang="ts">
+    import { onMount } from 'svelte'
+    import { get } from 'svelte/store'
+
     import Section from './section/Section.svelte'
     import Card from '$cmp/cards/Job.svelte'
     import Calendar from '$cmp/calendar/Calendar.svelte'
     import Filter from '$cmp/filters/Type1.svelte'
 
-    import { user } from '$str/store'
+    import { user, organization } from '$str/store'
+    import { axiosPrivate } from "../../../../assets/ts/api";
 
 
     let jobsArrObj: any = [
-        {
+        /*{
             "id": 885,
             "token": "D5RJfC",
             "number": "TST-JB-111-220885",
@@ -82,10 +86,17 @@
             "created": "16-08-2022 00:46",
             "income": 13,
             "attachments": 0
-        }
+        }*/
 
         // number, type_text, status, !short_description, !address, cost or duration, !created, !attachments
     ]
+
+    onMount(async () => {
+        const _org = get(organization)
+        const _url = `/jobs/${_org.id}/`
+        const response = await axiosPrivate().get(_url);
+        jobsArrObj = response.data.results.jobs;
+    });
  
 </script>
 
@@ -100,7 +111,7 @@
                 <!-- <img src={obj.organization.logo} alt={obj.organization.name}> -->
             </svelte:fragment>
             <svelte:fragment slot="header">
-                {obj.short_description}
+                {obj.short_description} | {obj.number}
             </svelte:fragment>
             <svelte:fragment slot="body">
                 {obj.address} 
