@@ -18,6 +18,8 @@
         --face-background-color: rgba(255, 255, 255, 1)
         --error-color: rgba(200, 10, 10, 1)
 
+        --extra-background-color: rgba(255, 255, 255, .75)
+
         --hr-color: rgba(0, 2, 4, .15)
 
         --header-color: var(--mute-color-25)

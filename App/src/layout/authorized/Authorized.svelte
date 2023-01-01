@@ -3,6 +3,8 @@
     import Header from './main/header/Header.svelte'
     import Footer from './main/footer/Footer.svelte'
 
+    import Extra from '$cmp/cards/Extra.svelte'
+
     import Organizations from './main/pages/Organizations.svelte'
     import Jobs from './main/pages/Jobs.svelte'
     import Confirmed from './main/pages/Confirmed.svelte'
@@ -29,4 +31,10 @@
         <Profile/>
     {/if}
     <Footer/>
+    {#if $user.modalWindow === 'extraJob'}
+        <Extra
+            class="color"
+            style="--color: var(--color-1); --color-light: var(--color-light-1)"
+        />
+    {/if}
 </Main>
