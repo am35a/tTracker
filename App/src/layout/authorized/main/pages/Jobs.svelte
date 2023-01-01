@@ -106,6 +106,7 @@
         <Card
             class="color"
             style="--color: var(--color-{i}); --color-light: var(--color-light-{i})"
+            on:click={() => $user.modalWindow = 'extraJob'}
         >
             <svelte:fragment slot="aside">
                 <!-- <img src={obj.organization.logo} alt={obj.organization.name}> -->
