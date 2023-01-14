@@ -1,32 +1,19 @@
 <script lang="ts">
-    import { user } from '$str/store'
+    import { onMount } from 'svelte'
+    import { get } from 'svelte/store'
 
-    export let jobObj: any = {
-        "id": 993,
-        "token": "QIPod0",
-        "number": "THE-JB-035-220993",
-        "type": "3",
-        "type_text": "Hours",
-        "time_type": "T",
-        "time_type_text": "Time frame",
-        "action_status": null,
-        "action_status_text": null,
-        "status": "2",
-        "status_text": "Assign",
-        "start_date": "2022-12-19T05:12:00+11:00",
-        "end_date": "2022-12-23T17:00:00+11:00",
-        "short_description": "MeMate Development | Week: 50",
-        "long_description": "Python development work based on Asana ongoing schedule",
-        "address": "NSW, SE9 89-97 Jones St Ultimo",
-        "cost": 660,
-        "duration": "22.00",
-        "time_progress": 0,
-        "bonus": 0,
-        "created": "17-12-2022 05:13",
-        "income": 660,
-        "time_spent": "0:00",
-        "attachments": []
-    }
+    import { user, organization, job } from '$str/store'
+    import { axiosPrivate } from "../../assets/ts/api"
+
+
+    export let jobObj: any = {}
+
+    onMount(async () => {
+        const _job = get(job)
+        const _url = `/job/${_job.id}/`
+        const response = await axiosPrivate().get(_url);
+        jobObj = response.data;
+    });
 
 //     I. показываем всегда:
 //   number, text_type, time_type, short_descriptio(это title), long description, address, created

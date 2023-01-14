@@ -7,7 +7,7 @@
     import Calendar from '$cmp/calendar/Calendar.svelte'
     import Filter from '$cmp/filters/Type1.svelte'
 
-    import { user, organization } from '$str/store'
+    import { job, user, organization } from '$str/store'
     import { axiosPrivate } from "../../../../assets/ts/api";
 
 
@@ -91,6 +91,16 @@
         // number, type_text, status, !short_description, !address, cost or duration, !created, !attachments
     ]
 
+    function chooseJob(id: number) {
+        $job.id = id
+        //$organization.name = name
+        //$organization.color = color
+
+        $user.modalWindow = 'extraJob'
+
+        //$user.page.current = 1
+    }
+
     onMount(async () => {
         const _org = get(organization)
         const _url = `/jobs/${_org.id}/`
@@ -106,7 +116,8 @@
         <Card
             class="color"
             style="--color: var(--color-{i}); --color-light: var(--color-light-{i})"
-            on:click={() => $user.modalWindow = 'extraJob'}
+            on:click={() => chooseJob(obj.id)}
+
         >
             <svelte:fragment slot="aside">
                 <!-- <img src={obj.organization.logo} alt={obj.organization.name}> -->

@@ -48,5 +48,7 @@ export let organization: any = writable(
     }
 )
 
+export let job: any = writable({})
+
 export let access_token = writable("")
 export let refresh_token = writable("")
